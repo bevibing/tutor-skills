@@ -52,6 +52,7 @@ Read the dashboard proficiency table and build options based on current state:
 2. If weak areas (🟥/🟨) exist → include "Drill weak areas" option naming the weakest area(s)
 3. Always include "Choose a section" option so the user can pick any area
 4. If all areas are 🟩/🟦 → include "Hard-mode review" option
+5. If any area has data → include "Open recall" option (explain concepts in your own words, no options)
 
 Present these as an AskUserQuestion with header "Session" and concise descriptions showing which areas each option targets. The user MUST select before proceeding.
 
@@ -60,13 +61,16 @@ Present these as an AskUserQuestion with header "Session" and concise descriptio
 1. Read markdown files in target section(s)
 2. If drilling weak area: also read `concepts/{area}.md` to find 🔴 unresolved concepts — rephrase these in new contexts (don't repeat the same question)
 3. Craft exactly 4 questions following `references/quiz-rules.md`
+   - **Open recall**: craft 2 open questions instead, each with a 2–4 point rubric (see Open-answer Rubric in `references/quiz-rules.md`)
 4. Verify each question against the notes (Author-time Verification in `references/quiz-rules.md`). Discard and regenerate any question the notes do not support. Count the discards.
 
 **CRITICAL**: Read `references/quiz-rules.md` before crafting ANY question. Zero hints allowed.
 
 ### Phase 4: Present Quiz
 
-Use AskUserQuestion:
+**Open recall**: ask one question at a time as a plain message and wait for the user's prose answer. Never show the rubric before the answer.
+
+Otherwise use AskUserQuestion:
 - 4 questions, 4 options each, single-select
 - Header: "Q1. Topic" (max 12 chars)
 - Descriptions: neutral, no hints
@@ -77,6 +81,7 @@ Use AskUserQuestion:
 2. Wrong answers: concise explanation. If the chosen option has a misconception tag, name it: "You may be thinking {misconception}; the notes say {fact}."
 3. Map each question to its area
 4. If any question was discarded in Phase 3, report the count in one line
+5. **Open recall**: mark each rubric point met or missed, show the score (e.g., 2/3), and quote the note that covers each missed point
 
 ### Phase 6: Update Files
 
@@ -86,6 +91,7 @@ For each question answered:
 - **New concept**: Add row to table + if wrong, add error note under `### 오답 메모` (or localized equivalent)
 - **Existing 🔴 concept answered correctly**: Increment attempts & correct, change status to 🟢, keep error note (learning history)
 - **Existing 🟢 concept answered wrong again**: Increment attempts, change status back to 🔴, update error note
+- **Open recall**: count as correct only if every rubric point is met; otherwise list the missed points in the error note
 
 Table format:
 ```markdown

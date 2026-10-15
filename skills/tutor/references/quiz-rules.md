@@ -39,6 +39,16 @@ Never present a question that needs knowledge outside the vault to answer.
 4. **Comparison/distinction**: "What is the difference between X and Y?"
 5. **Debugging scenario**: "Given this error, what is the most likely cause?"
 
+## Open-answer Rubric
+
+For "Open recall" sessions:
+
+- Ask "explain", "why", or "what happens when" questions — not one-word facts
+- Write 2–4 rubric points per question, each a key idea stated in the notes
+- Grade by meaning, not keywords — a correct paraphrase meets the point
+- Every rubric point must cite a vault note; drop points the notes do not cover
+- Keep the rubric hidden until the user has answered
+
 ## Difficulty Balancing
 
 - Diagnostic: easy 40%, medium 40%, hard 20%
