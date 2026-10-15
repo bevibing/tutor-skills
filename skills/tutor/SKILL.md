@@ -59,10 +59,11 @@ Present these as an AskUserQuestion with header "Session" and concise descriptio
 ### Phase 3: Build Questions
 
 1. Read markdown files in target section(s)
-2. If drilling weak area: also read `concepts/{area}.md` to find 🔴 unresolved concepts — rephrase these in new contexts (don't repeat the same question)
+2. If drilling weak area: also read `concepts/{area}.md` to find 🔴 unresolved concepts — rephrase these in new contexts (don't repeat the same question). Put concepts flagged `Misconception: yes` first
 3. Craft exactly 4 questions following `references/quiz-rules.md`
    - **Open recall**: craft 2 open questions instead, each with a 2–4 point rubric (see Open-answer Rubric in `references/quiz-rules.md`)
 4. Verify each question against the notes (Author-time Verification in `references/quiz-rules.md`). Discard and regenerate any question the notes do not support. Count the discards.
+5. Tag each question with a Bloom level and pick levels per the Bloom Ladder in `references/quiz-rules.md`
 
 **CRITICAL**: Read `references/quiz-rules.md` before crafting ANY question. Zero hints allowed.
 
@@ -75,6 +76,8 @@ Otherwise use AskUserQuestion:
 - Header: "Q1. Topic" (max 12 chars)
 - Descriptions: neutral, no hints
 
+Then, before grading, ask confidence with a second AskUserQuestion: one question per quiz item, header "Conf. Q1", options Low / Medium / High.
+
 ### Phase 5: Grade & Explain
 
 1. Show results table (question / correct answer / user answer / result)
@@ -82,6 +85,7 @@ Otherwise use AskUserQuestion:
 3. Map each question to its area
 4. If any question was discarded in Phase 3, report the count in one line
 5. **Open recall**: mark each rubric point met or missed, show the score (e.g., 2/3), and quote the note that covers each missed point
+6. Flag every **high confidence + wrong** answer as a misconception in the results table
 
 ### Phase 6: Update Files
 
@@ -92,12 +96,16 @@ For each question answered:
 - **Existing 🔴 concept answered correctly**: Increment attempts & correct, change status to 🟢, keep error note (learning history)
 - **Existing 🟢 concept answered wrong again**: Increment attempts, change status back to 🔴, update error note
 - **Open recall**: count as correct only if every rubric point is met; otherwise list the missed points in the error note
+- **Bloom ladder**: a concept turns 🟢 only after a correct answer at `apply` or higher. A correct `remember`/`understand` answer increments counts but keeps the status
+- **Level**: record the highest Bloom level answered correctly. If an existing table has no Level column, add it and set old rows to `-`
+- **High confidence + wrong**: add `- Misconception: yes (high confidence)` to the error note. Drill these first next session
+- **Low confidence + correct**: keep the status, but re-test the concept in a later session
 
 Table format:
 ```markdown
-| Concept | Attempts | Correct | Last Tested | Status |
-|---------|----------|---------|-------------|--------|
-| concept name | 2 | 1 | 2026-02-24 | 🔴 |
+| Concept | Attempts | Correct | Level | Last Tested | Status |
+|---------|----------|---------|-------|-------------|--------|
+| concept name | 2 | 1 | understand | 2026-02-24 | 🔴 |
 ```
 
 Error notes format (only for wrong answers):
@@ -156,8 +164,8 @@ Create per area when first question is asked. Example:
 ```markdown
 # {Area Name} — Concept Tracker
 
-| Concept | Attempts | Correct | Last Tested | Status |
-|---------|----------|---------|-------------|--------|
+| Concept | Attempts | Correct | Level | Last Tested | Status |
+|---------|----------|---------|-------|-------------|--------|
 
 ### Error Notes
 

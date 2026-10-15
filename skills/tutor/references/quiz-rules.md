@@ -49,6 +49,27 @@ For "Open recall" sessions:
 - Every rubric point must cite a vault note; drop points the notes do not cover
 - Keep the rubric hidden until the user has answered
 
+## Bloom Ladder
+
+Tag every question with one Bloom level: `remember` · `understand` · `apply` · `analyze` · `evaluate` · `create`.
+
+- Question types map to levels: factual recall → remember; conceptual → understand; behavioral prediction / debugging → apply or analyze; comparison → analyze or evaluate
+- Diagnostic: start at `understand` / `apply`
+- Drill: ask one level above the concept's current Level
+- A concept is not mastered until answered correctly at `apply` or higher
+- Practice files from tutor-setup map as: `[recall]` → remember/understand, `[application]` → apply, `[analysis]` → analyze
+
+## Confidence Calibration
+
+Ask confidence (Low / Medium / High) after the answers and before showing results.
+
+| Confidence | Result | Meaning | Action |
+|------------|--------|---------|--------|
+| High | Wrong | Misconception | Flag in error note; drill first next session |
+| Low | Correct | Fragile knowledge | Keep status; re-test later |
+| High | Correct | Known | Normal update |
+| Low / Medium | Wrong | Gap | Normal update |
+
 ## Difficulty Balancing
 
 - Diagnostic: easy 40%, medium 40%, hard 20%
