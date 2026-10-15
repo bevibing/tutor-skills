@@ -97,6 +97,38 @@ keywords: exam traps, weak areas, common mistakes
 - [[빠른 참조]]
 ```
 
+## Learning Path Template
+
+```markdown
+---
+keywords: learning path, objectives, prerequisites
+---
+
+# Learning Path
+
+#dashboard #learning-path
+
+## Objectives
+| Section | By the end you can … |
+|---------|----------------------|
+| [[01-Topic1]] | explain X; choose between Y and Z |
+
+## Prerequisites
+| Learn first | Before | Source |
+|-------------|--------|--------|
+| [[Concept A]] | [[Concept B]] | source.pdf p.12 |
+
+## Study Order
+1. [[Concept A]]
+2. [[Concept B]]
+```
+
+### Learning Path Rules
+
+- Every prerequisite edge cites the source passage that supports it — drop uncited edges
+- No cycles; Study Order is a topological sort of the edges
+- Objectives use action verbs (explain, compare, choose, debug) — not "understand X"
+
 ## Concept Note Template
 
 ```markdown

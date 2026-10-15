@@ -36,6 +36,7 @@ Before reporting completion, verify every item in the relevant mode's section. F
 - [ ] MOC links to every concept note AND practice note
 - [ ] Weak Areas link to `→ [[note]]` AND `→ [[Exam Traps]]`
 - [ ] Exam Traps exists with per-topic fold callouts and bidirectional links
+- [ ] Learning Path exists: objectives for every section, cited prerequisite edges, no cycles
 
 ### Quick Reference
 - [ ] All key formulas and condition expressions included

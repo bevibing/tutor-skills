@@ -59,7 +59,7 @@ On invocation, detect mode automatically:
 
 1. Identify topic hierarchy — sections, chapters, domain divisions.
 2. Separate concept content vs practice questions.
-3. Map dependencies between topics.
+3. Map dependencies between topics as prerequisite edges ("learn A before B"). Keep only edges the source supports, with a source citation for each.
 4. Identify key patterns — comparisons, decision trees, formulas.
 5. **Full topic checklist (MANDATORY)** — every topic/subtopic listed. Drives all subsequent phases.
 
@@ -81,11 +81,12 @@ Create `StudyVault/` with numbered folders per [templates.md](references/templat
 
 ### Phase D5: Dashboard Creation
 
-Create `00-Dashboard/`: MOC, Quick Reference, Exam Traps. See [templates.md](references/templates.md).
+Create `00-Dashboard/`: MOC, Quick Reference, Exam Traps, Learning Path. See [templates.md](references/templates.md).
 
 - **MOC**: Topic Map + Practice Notes + Study Tools + Tag Index (with rules) + Weak Areas (with links) + Non-core Topic Policy
 - **Quick Reference**: every heading includes `→ [[Concept Note]]` link; all key formulas
 - **Exam Traps**: per-topic trap points in fold callouts, linked to concept notes
+- **Learning Path**: per-section objectives ("By the end you can …") + prerequisite edges from Phase D2, in topological order
 
 ### Phase D6: Concept Notes
 

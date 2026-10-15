@@ -64,6 +64,7 @@ Present these as an AskUserQuestion with header "Session" and concise descriptio
    - **Open recall**: craft 2 open questions instead, each with a 2–4 point rubric (see Open-answer Rubric in `references/quiz-rules.md`)
 4. Verify each question against the notes (Author-time Verification in `references/quiz-rules.md`). Discard and regenerate any question the notes do not support. Count the discards.
 5. Tag each question with a Bloom level and pick levels per the Bloom Ladder in `references/quiz-rules.md`
+6. If `*Learning Path*` exists, order concepts by its Study Order: ask about prerequisites before the concepts that depend on them, and skip concepts whose prerequisites are still 🔴
 
 **CRITICAL**: Read `references/quiz-rules.md` before crafting ANY question. Zero hints allowed.
 
