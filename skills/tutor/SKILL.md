@@ -60,6 +60,7 @@ Present these as an AskUserQuestion with header "Session" and concise descriptio
 1. Read markdown files in target section(s)
 2. If drilling weak area: also read `concepts/{area}.md` to find 🔴 unresolved concepts — rephrase these in new contexts (don't repeat the same question)
 3. Craft exactly 4 questions following `references/quiz-rules.md`
+4. Verify each question against the notes (Author-time Verification in `references/quiz-rules.md`). Discard and regenerate any question the notes do not support. Count the discards.
 
 **CRITICAL**: Read `references/quiz-rules.md` before crafting ANY question. Zero hints allowed.
 
@@ -73,8 +74,9 @@ Use AskUserQuestion:
 ### Phase 5: Grade & Explain
 
 1. Show results table (question / correct answer / user answer / result)
-2. Wrong answers: concise explanation
+2. Wrong answers: concise explanation. If the chosen option has a misconception tag, name it: "You may be thinking {misconception}; the notes say {fact}."
 3. Map each question to its area
+4. If any question was discarded in Phase 3, report the count in one line
 
 ### Phase 6: Update Files
 

@@ -17,6 +17,19 @@ Every question must be answerable ONLY by someone who actually knows the materia
    - GOOD: "Where does error() method output go?"
 
 5. **Plausible distractors**: Wrong options must be real concepts from the domain, representing common misconceptions
+   - Tag each wrong option with the misconception it targets (e.g., `misconception: "422 is for malformed JSON"`)
+   - Keep tags in your working notes only — NEVER put them in labels or descriptions
+   - Reuse confusions from `### Error Notes` in concept files when available
+
+## Author-time Verification (CoVe)
+
+After crafting each question and before presenting it:
+
+1. Answer the question using ONLY the section notes read in Phase 3
+2. Check that the notes support exactly one correct option and rule out every distractor
+3. If not, discard the question and write a new one
+
+Never present a question that needs knowledge outside the vault to answer.
 
 ## Question Types
 
